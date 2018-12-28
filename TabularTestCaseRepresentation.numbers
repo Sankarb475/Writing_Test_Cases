@@ -1,0 +1,61 @@
+		Input Columns			Output Columns		
+Test Case No.	Test case type	person_id	orig_buyer_person_id 	cust_mask_nr	masked_person_id (Expected)	masked_person_id (Actual)	Result
+Positive Test Cases includes Null							
+1	"Input:
+
+orig_buyer_person_id = null
+person_id = Valid
+cust_mask_nr = null
+
+Output:
+
+masked_person_id = 5 * person_id"	223450	null	null	1117250	1117250	Passed
+2	"Input:
+
+orig_buyer_person_id = null
+person_id = Valid 
+cust_mask_nr = valid
+
+Output:
+
+masked_person_id = 5 * person_id + cust_mask_nr"	141591	null	11	707966	707966	Passed
+3	"Input:
+
+orig_buyer_person_id = null
+person_id = null 
+cust_mask_nr = null
+
+Output:
+
+masked_person_id = 0"	null	null	null	0	0	Passed
+4	"Input:
+
+orig_buyer_person_id = null
+person_id = null 
+cust_mask_nr = valid
+
+Output:
+
+masked_person_id = cust_mask_nr"	null	null	11	0	0	
+5	"Input:
+
+orig_buyer_person_id = Valid
+person_id is not going to effect the output 
+cust_mask_nr = valid
+
+Output:
+
+masked_person_id = 5 * orig_buyer_person_id + cust_mask_nr"	null	111111	11	555566	555566	
+6	"Input:
+
+orig_buyer_person_id = Valid
+person_id is not going to effect the output 
+cust_mask_nr = null
+
+Output:
+
+masked_person_id = 5 * orig_buyer_person_id"	182139	111111	null	555555	555555	
+Negative Test Cases							
+7	If any/any combination/all of the inputs are having spaces, the method will throw an error	 "  "	 "  "	 "  "		Failed (Type Mismatch error)	
+8	Depending on the logic if negative value comes as inputs, after the calculation it might end up giving a negative output	141591	-99	null		-495	
+9	If any/any combination/all of the inputs are having string, the method will throw an error	Man	99	88		Failed (Type Mismatch error)	
