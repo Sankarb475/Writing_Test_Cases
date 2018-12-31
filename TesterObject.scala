@@ -14,6 +14,7 @@ object TesterObject extends App{
             assert(outValue == expectedOutput(i))
             println(s"Passed Test case :: ${i+1}")
         }   
+        println("getOutput Testing successful")
     }
 
 }
